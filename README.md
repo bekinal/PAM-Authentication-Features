@@ -105,9 +105,45 @@ The cat /etc/security/opasswd command displays the hash value of the old passwor
 <br />
 <br />
 
-<h2>Disable Reuse of the 10 Oldest Passwords:</h2>
-The nano command is used to reopen the PAM file:<br/>
-<img src="https://imagizer.imageshack.com/img922/8698/EHkkTc.png"
+<h2>Restrict PAM SSH Authentication:</h2>
+The apt install ssh command is used to install the ssh service on the Debian machine:<br/>
+<img src="https://imagizer.imageshack.com/img923/4536/NrRFRD.png"
+<br />
+<br />
+The echo command is issued to create a file of allow SSH users and add my user to it:<br/>
+<img src="https://imagizer.imageshack.com/img923/8799/QlXQGq.png"
+<br />
+<br />
+The nano command is used to open the SSH PAM configuration file:<br/>
+<img src="https://imagizer.imageshack.com/img923/6139/IKOaJ1.png"
+<br />
+<br />
+The following line is written under the @include line. This states that an authentication process is required to allow connection for a user located in the file /etc/ssh/sshd/allow. If an error occurs, the connection will fail:<br/>
+<img src="https://imagizer.imageshack.com/img924/2265/JEwyfQ.png"
+<br />
+<br />
+The service ssh start command is run:<br/>
+<img src="https://imagizer.imageshack.com/img923/8374/7AyiVr.png"
+<br />
+<br />
+IP a i sused to check the VM's IP address:<br/>
+<img src="https://imagizer.imageshack.com/img923/5250/QB1goR.png"
+<br />
+<br />
+The windows 10 vm is run and it is ensured that the machine's are connected via a bridged adapter:<br/>
+<img src="https://imagizer.imageshack.com/img923/426/jBUkrE.png"
+<br />
+<br />
+Putty is used on the Windows machine to attempt an SSH connection on port 4567:<br/>
+<img src="https://imagizer.imageshack.com/img924/6374/UsyIBw.png"
+<br />
+<br />
+Attempting to connect with a user not listed in the sshd.allow file will deny access:<br/>
+<img src="https://imagizer.imageshack.com/img924/9756/ZQTlim.png"
+<br />
+<br />
+A connection is granted if the user is listed in the sshd.allow file:<br/>
+<img src="https://imagizer.imageshack.com/img923/1117/miLALf.png"
 <br />
 <br />
 
